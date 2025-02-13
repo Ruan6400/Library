@@ -1,0 +1,17 @@
+form{
+    margin-bottom: 25px;
+    display: none;
+}
+form label{display: block;}
+form label:not(:first-of-type){
+    margin-top: 50px;
+}
+form button{
+    display: block;
+}
+#Cadastrar{
+    display: none;
+}
+#Cadastrar:checked+form{
+    display: block;
+}
