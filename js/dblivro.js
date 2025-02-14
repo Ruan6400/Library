@@ -32,6 +32,9 @@ function Run(){
         }
         
         if(informacoes[3].value==""){
+            if(document.getElementById("automatico").checked){
+                
+            }
             informacoes[3].style.backgroundColor="#f55"
         }else if(
             informacoes[3].value.length != 5 ||
@@ -72,6 +75,17 @@ function Armazenar(){
     const Livro = {titulo:titulo,autor:autor,editora:editora,codigo:codigo}
     Dados.push(Livro)
     localStorage.setItem("Dados",JSON.stringify({vetor:Dados}));
+}
+
+function GerarCodigo(){
+    const Inicial = document.getElementById('editora').value[0].toUpperCase()
+    let Randomnum = ""
+    for(let i=0;i<3;i++){Randomnum+=Math.round(Math.random()*9);}
+    const Nome_Autor = document.getElementById('autor').value.split(" ");
+    const Sobrenome = Nome_Autor[Nome_Autor.length-1]
+    const Final = Sobrenome[Sobrenome.length-1]
+
+    return Inicial+Randomnum+Final;
 }
 
 document.addEventListener("DOMContentLoaded",Run)
