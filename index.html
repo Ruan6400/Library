@@ -8,22 +8,31 @@
     <script src="js/dblivro.js"></script>
 </head>
 <body>
-    <button>Cadastrar</button>
-    <input type="checkbox" id="Cadastrar">
-    <form>
-        <label for="titulo">Título</label>
-        <input type="text" id="titulo">
-        <label for="autor">Autor</label>
-        <input type="text" id="autor">
-        <label for="editora">Editora</label>
-        <input type="text" id="editora">
-        <label for="automatico">Gerar código automático</label>
-        <input type="checkbox" id="automatico">
-        <label for="codigo">Código</label>
-        <input type="text" maxlength="5" id="codigo">
-        <button>Cadastrar livro</button>
-    </form>
-    <input type="text">
-    <button>Pesquisar livro</button>
+    <section id="Cadastro">
+        <button>Cadastrar</button>
+        <input type="checkbox" id="Cadastrar">
+        <form>
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo">
+            <label for="autor">Autor</label>
+            <input type="text" id="autor">
+            <label for="editora">Editora</label>
+            <input type="text" id="editora">
+            
+            <label for="automatico">Gerar código automático</label>
+            <input type="checkbox" id="automatico">
+
+            <div>
+                <div id="interruptor"></div>
+            </div>
+            <label for="codigo">Código</label>
+            <input type="text" maxlength="5" id="codigo">
+            <button>Cadastrar livro</button>
+        </form>
+    </section>
+    <section id="Pesquisa">
+        <input type="text">
+        <button>Pesquisar livro</button>
+    </section>
 </body>
 </html>

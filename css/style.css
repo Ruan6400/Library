@@ -1,3 +1,9 @@
+body{
+    display: flex;
+}
+body>section{
+    min-width: 300px;
+}
 form{
     margin-bottom: 25px;
     display: none;
@@ -15,3 +21,59 @@ form button{
 #Cadastrar:checked+form{
     display: block;
 }
+
+#automatico:checked~:is(input,label){
+    display: none;
+}
+
+table{
+    border-collapse: collapse;
+}
+th{
+    background-color: aquamarine;
+}
+tr:nth-child(odd){
+    background-color: #ddd;
+}
+td:nth-child(even){
+    background-color: #f0f0f0;
+}
+td{
+    border: 1px solid white;
+}
+th,td{
+    padding: 3px;
+}
+#automatico{
+    display: none;
+}
+div:has(>#interruptor){
+    width: 40px;
+    height: 20px;
+    padding: 2px;
+    background-color: #fee;
+    border-radius: 3px;
+    box-shadow: inset 0.2em 0.2em 0.3em #aaa;
+    margin: 10px 0;
+    transition: background-color 0.5s ease;
+}
+#interruptor{
+    width: 20px;
+    height: 20px;
+    background-color: #fcc;
+    border-radius: 3px;
+    box-shadow: inset -0.2em -0.2em 0.3em #0004;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+#automatico:checked~div>#interruptor{
+    background-color: #cfc;
+    transform: translateX(100%);
+}
+#automatico:checked~div{
+    background-color: #efe;
+}
+form input[type="text"]:last-of-type{
+    margin-bottom: 20px;
+}
+
