@@ -89,8 +89,14 @@ function Run(){
             })
             consulta.forEach(livro=>{
                 let tr = document.createElement('tr')
-                Object.keys(livro).forEach(att=>{tr.insertAdjacentHTML('beforeend','<td>'+livro[att]+'</td>')})
+                Object.keys(livro).forEach(att=>{
+                    tr.insertAdjacentHTML('beforeend','<td>'+livro[att]+'</td>')
+                })
+                tr.insertAdjacentHTML('beforeend','<td><button>X</button></td>')
                 document.querySelector('tbody').insertAdjacentElement('beforeend',tr)
+                let bt = document.querySelector('tbody>tr:last-of-type button')
+                bt.addEventListener('click',()=>{
+                })
             })
             
         }
