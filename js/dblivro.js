@@ -95,7 +95,28 @@ function Run(){
                 tr.insertAdjacentHTML('beforeend','<td><button>X</button></td>')
                 document.querySelector('tbody').insertAdjacentElement('beforeend',tr)
                 let bt = document.querySelector('tbody>tr:last-of-type button')
+                let row = bt.parentNode.parentNode
                 bt.addEventListener('click',()=>{
+                    document.body.insertAdjacentHTML('beforeend',`
+                        <div id="Delete_window">
+                            <div>
+                                <div>Excluir livro</div>
+                                <p>Deseja excluir esse livro?</p>
+                                <button>Sim</button>
+                                <button>Não</button>
+                            </div>
+                        </div>`)
+                    let menu_delete = document.getElementById('Delete_window')
+                    document.querySelector('#Delete_window button:last-of-type').addEventListener('click',()=>menu_delete.remove())
+                    menu_delete.children[0].children[0].innerHTML = row.children[0].innerHTML+`(${row.children[3].innerHTML})`
+                    setTimeout(()=>menu_delete.style.opacity="1",10)
+                    document.querySelector('#Delete_window button:first-of-type')
+                        .addEventListener('click',()=>{
+                            Dados = Dados.filter(dado=>dado.codigo!=row.children[3].innerHTML)
+                            localStorage.setItem("Dados",JSON.stringify({vetor:Dados}))
+                            menu_delete.remove()
+                            table.remove()
+                        })
                 })
             })
             

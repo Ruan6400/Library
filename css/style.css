@@ -1,5 +1,8 @@
 body{
     display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 600px;
+    height: 500px;
 }
 body>section{
     min-width: 300px;
@@ -27,7 +30,14 @@ form button{
 }
 
 table{
+    margin-top: 50px;
     border-collapse: collapse;
+}
+table button{
+    border: none;
+    border-radius: 2px;
+    background-color: #d88;
+    color: white;
 }
 th{
     background-color: aquamarine;
@@ -77,3 +87,42 @@ form input[type="text"]:last-of-type{
     margin-bottom: 20px;
 }
 
+#Delete_window{
+    width: 100vw;
+    height: 100vh;
+    background-color: #000a;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Delete_window>div{
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    text-align: center;
+}
+#Delete_window>div>div{
+    background-color: #d88;
+    padding: 5px;
+}
+#Delete_window button{
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: white;
+}
+:is(#Delete_window,table) button:hover{
+    transform: scale(1.1);
+}
+#Delete_window button:first-of-type{
+    background-color: rgb(226, 74, 74);
+}
+
+#Delete_window button:not(:first-of-type){
+    background-color: rgb(74, 226, 94);
+     
+}
